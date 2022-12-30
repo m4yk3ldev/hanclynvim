@@ -1,12 +1,10 @@
-# hanclynvim
+# HANCLYNVIM
 
 ### Para NeoVim
 
 ## Como descargar
 
 Para usar el script se debe instalar el `install.sh`
-
-Para cargar las configuraciones del i3wm usar `install-gui.sh`
 
 # Combinaciones de teclas
 
