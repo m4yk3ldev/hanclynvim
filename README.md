@@ -6,6 +6,13 @@
 
 Para usar el script se debe instalar el `install.sh`
 
+```bash
+
+bash install.sh
+
+```
+
+
 # Combinaciones de teclas
 
 ## Principales
