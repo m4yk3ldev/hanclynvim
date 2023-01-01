@@ -77,7 +77,9 @@ return packer.startup(function(use)
   -- Treesitter
   use({
     "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
+    run = function()
+      pcall(require('nvim-treesitter.install').update { with_sync = true })
+    end,
   }) -- Instalar optimizacion del parse files
   use("JoosepAlviste/nvim-ts-context-commentstring") -- Para reconocer los commentarios
   use("p00f/nvim-ts-rainbow") -- Adornar las chaves
@@ -94,11 +96,14 @@ return packer.startup(function(use)
       require("nvim-ts-autotag").setup()
     end
   }) -- Para Autocerrar los tag
+  use { -- Additional text objects via treesitter
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    after = 'nvim-treesitter',
+  }
   use {
     "ThePrimeagen/refactoring.nvim",
     requires = {
       { "nvim-lua/plenary.nvim" },
-      { "nvim-treesitter/nvim-treesitter" }
     }
   }
   use("neoclide/vim-jsx-improve")
@@ -134,6 +139,7 @@ return packer.startup(function(use)
   use 'hrsh7th/cmp-cmdline' -- Comando cmdline
   use 'hrsh7th/cmp-path' -- Path
   use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' } -- Habilitar el Tabnine
+  use "folke/neodev.nvim"
 
   -- GIT
   use 'lewis6991/gitsigns.nvim'

@@ -17,5 +17,13 @@ lspconfigMason.setup {
     "dockerls",
     "cssmodules_ls",
     "emmet_ls",
+    "eslint",
+    "html",
+    "jsonls",
+    "rust_analyzer",
+    "svelte",
+    "tailwindcss",
+    "vuels",
+    "yamlls"
   }
 }
