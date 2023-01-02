@@ -12,7 +12,7 @@ statusSpotify:start()
 
 local diagnostics = {
   "diagnostics",
-  sources = { "nvim_diagnostic" },
+  sources = { "nvim_diagnostic", "coc" },
   symbols = { error = " ", warn = " ", info = " ", hint = " " },
   colored = true,
   update_in_insert = true,
@@ -73,7 +73,7 @@ lualine.setup({
     lualine_a = { "mode" },
     lualine_b = { branch, diagnostics, diff },
     lualine_c = {},
-    lualine_x = { statusSpotify.listen, spaces, "encoding", filetype },
+    lualine_x = { 'g:coc_status', statusSpotify.listen, spaces, "encoding", filetype },
     lualine_y = { location },
     lualine_z = { progress },
   },

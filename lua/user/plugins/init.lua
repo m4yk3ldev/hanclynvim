@@ -11,9 +11,7 @@ require("user.plugins.rest") -- Cargando RestNvim
 require("user.plugins.project") -- Cargando Project
 require("user.plugins.refactoring") -- Cargando refactoring
 require("user.plugins.wichkey") -- Cargando Wich Key config
-require("user.plugins.lsp") -- Cargando LSP
-require("user.plugins.cmp") -- Cargando CMP
 require("user.plugins.gitsigns") -- Cargando gitsigns
 require("user.plugins.git") -- Cargando git
 require("user.plugins.neural") -- Cargando Neural
-require("user.plugins.neodev") -- Cargado Neodev
+require("user.plugins.coc") -- Cargando COC
