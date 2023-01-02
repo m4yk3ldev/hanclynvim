@@ -105,9 +105,6 @@ keymap("n", "gi", "<Plug>(coc-implementation)", opts)
 keymap("n", "K", ":call CocActionAsync('doHover')<CR>", opts)
 keymap("n", "<leader>rn", "<Plug>(coc-rename)", {})
 keymap("i", "<C-Space>", "coc#refresh()", { silent = true, expr = true })
-keymap("i", "<cr>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], coc_opts)
-keymap("i", "<TAB>", 'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', coc_opts)
-keymap("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], coc_opts)
 keymap('n', '<F3>', ':call CocAction("format")<CR>', opts)
 keymap("n", "gc", "<Plug>(coc-git-commit)", opts)
 -- navigate conflicts of current buffer
@@ -118,6 +115,18 @@ keymap("n", "[g", "<Plug>(coc-git-prevchunk)", opts)
 keymap("n", "]g", "<Plug>(coc-git-nextchunk)", opts)
 -- show chunk diff at current position
 keymap("n", "gs", "<Plug>(coc-git-chunkinfo)", opts)
+vim.cmd([[inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ CheckBackspace() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>']])
 
 -- NvimTree mapping
 keymap("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
