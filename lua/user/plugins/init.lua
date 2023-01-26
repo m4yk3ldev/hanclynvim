@@ -14,4 +14,11 @@ require("user.plugins.wichkey") -- Cargando Wich Key config
 require("user.plugins.gitsigns") -- Cargando gitsigns
 require("user.plugins.git") -- Cargando git
 require("user.plugins.neural") -- Cargando Neural
-require("user.plugins.coc") -- Cargando COC
+
+local status_ok, coc = pcall(require, "coc")
+if status_ok then
+    require("user.plugins.coc") -- Cargando COC
+  return
+end
+
+
