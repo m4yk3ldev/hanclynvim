@@ -7,9 +7,6 @@ local hide_in_width = function()
   return vim.fn.winwidth(0) > 80
 end
 
-local statusSpotify = require 'nvim-spotify'.status
-statusSpotify:start()
-
 local diagnostics = {
   "diagnostics",
   sources = { "nvim_diagnostic", "coc" },
@@ -73,7 +70,7 @@ lualine.setup({
     lualine_a = { "mode" },
     lualine_b = { branch, diagnostics, diff },
     lualine_c = {},
-    lualine_x = { 'g:coc_status', statusSpotify.listen, spaces, "encoding", filetype },
+    lualine_x = { 'g:coc_status',  spaces, "encoding", filetype },
     lualine_y = { location },
     lualine_z = { progress },
   },

@@ -12,7 +12,6 @@ bash install.sh
 
 ```
 
-
 # Combinaciones de teclas
 
 ## Principales
@@ -45,11 +44,10 @@ bash install.sh
 - `Ctrl+Space` Buscar las autocompletados
 - `F3` Para formatting on save
 - `gc` Para mostrar los commits del ficheros
-- `[c` Para ir al anterior conflicto 
+- `[c` Para ir al anterior conflicto
 - `]c` Para ir conflicto después
 - `[g` Para ir al cambio del buffer anterior
 - `]g` Para ir al cambio después del buffer
-
 
 ## NvimTree
 
