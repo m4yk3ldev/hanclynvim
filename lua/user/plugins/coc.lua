@@ -29,6 +29,8 @@ vim.g.coc_global_extensions = {
   "coc-yaml",
   "coc-gitignore",
   "coc-diagnostic",
+  "coc-tailwindcss",
+  "@yaegassy/coc-tailwindcss3",
 }
 vim.cmd('autocmd FileType scss setl iskeyword+=@-@')
 vim.cmd('let g:javascript_plugin_flow = 1')

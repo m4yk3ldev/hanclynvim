@@ -109,5 +109,8 @@
     "winblend": 15,
     "borderhighlight": "FloatBorder"
   },
-  "Lua.telemetry.enable": true
+  "Lua.telemetry.enable": true,
+  "cSpell.userWords": ["mouseaction"],
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore"
 }
