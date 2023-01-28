@@ -75,7 +75,6 @@
   "suggest.triggerCompletionWait": 30,
   "suggest.autoTrigger": "always",
   "suggest.localityBonus": true,
-  "suggest.fixInsertedWord": true,
   "suggest.enablePreselect": true,
   "suggest.removeDuplicateItems": true,
   "suggest.preferCompleteThanJumpPlaceholder": true,
@@ -110,7 +109,6 @@
     "borderhighlight": "FloatBorder"
   },
   "Lua.telemetry.enable": true,
-  "cSpell.userWords": ["mouseaction"],
   "css.lint.unknownAtRules": "ignore",
   "scss.lint.unknownAtRules": "ignore"
 }
