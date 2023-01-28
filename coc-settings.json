@@ -29,7 +29,8 @@
   "emmet.includeLanguages": {
     "javascript": "javascriptreact",
     "svelte": "html",
-    "typescript": "typescriptreact"
+    "typescript": "typescriptreact",
+    "postcss": "css"
   },
   "python.analysis.diagnosticMode": "workspace",
   "python.analysis.typeCheckingMode": "basic",
