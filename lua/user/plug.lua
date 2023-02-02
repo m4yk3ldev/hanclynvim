@@ -146,6 +146,14 @@ return packer.startup(function(use)
     run = 'yarn install --frozen-lockfile && yarn compile'
   }
 
+  --- Soporte para imagenes
+  use {
+    'samodostal/image.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    },
+  }
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
