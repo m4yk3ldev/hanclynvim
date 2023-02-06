@@ -62,7 +62,7 @@ end
 lualine.setup({
   options = {
     icons_enabled = true,
-    theme = "gruvbox",
+    theme = "tokyonight",
     disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
     always_divide_middle = true,
   },
@@ -70,7 +70,7 @@ lualine.setup({
     lualine_a = { "mode" },
     lualine_b = { branch, diagnostics, diff },
     lualine_c = {},
-    lualine_x = { 'g:coc_status',  spaces, "encoding", filetype },
+    lualine_x = { 'g:coc_status', spaces, "encoding", filetype },
     lualine_y = { location },
     lualine_z = { progress },
   },
