@@ -1,5 +1,6 @@
 {
+  "cSpell.words": ["Nvim"],
+  "editor.formatOnSave": true,
   "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
-  "Lua.diagnostics.globals": ["vim"],
-  "Lua.diagnostics.disable": ["missing-parameter"]
+  "Lua.diagnostics.globals": ["vim"]
 }

@@ -33,7 +33,7 @@ bash install.sh
 - `Space+gc` Buscar los commits
 - `Space+e` Buscar Emoji
 
-## Coc
+## LSP
 
 - `Space+ca` Ejecutar los Code Action
 - `gd` Buscar la definición
