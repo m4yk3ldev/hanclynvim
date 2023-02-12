@@ -4,7 +4,7 @@ if impatient_ok then
 end
 require("user.config") -- Para cargar todas las configuraciones básicas
 require("user.plug") -- Cargando los plugins
-require("user.plugins") -- Cargando los theme
+require("user.plugins") -- Cargando todos las configuraciones
 require("user.keymap") -- Cargando keyboard principales
 require("user.theme") -- Cargando los theme
 require("user.autocmd") -- Para cargar los plugins

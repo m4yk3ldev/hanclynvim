@@ -1,7 +1,5 @@
 local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
-local coc_opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
-
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
@@ -73,14 +71,14 @@ keymap("n", "<C-s>", "<cmd>w!<CR>", opts)
 -- ForceQuit
 keymap("n", "<C-q>", "<cmd>q!<CR>", opts)
 -- Turn off search highlighting
-keymap('n', '<Esc>', ':noh<CR>', opts)
+keymap("n", "<Esc>", ":noh<CR>", opts)
 -- Get out of the Terminal
-keymap('t', '<Esc>', '<C-\\><C-n>', opts)
+keymap("t", "<Esc>", "<C-\\><C-n>", opts)
 -- Duplicate Line
-keymap('n', 'tt', ':t.<CR>', opts)
+keymap("n", "tt", ":t.<CR>", opts)
 
 -- Recargar las configuraciones
-keymap('n', '<C-r>', '<cmd>lua reload_nvim_conf()<CR>', opts)
+keymap("n", "<C-r>", "<cmd>lua reload_nvim_conf()<CR>", opts)
 
 -- Telescope
 keymap("n", "<leader>ff", "<cmd>Telescope find_files hidden=true<cr>", opts)
@@ -89,44 +87,20 @@ keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<leader>gs", "<cmd>Telescope git_status<CR>", opts)
 keymap("n", "<leader>gc", "<cmd>Telescope git_commits<CR>", opts)
 keymap("n", "<leader>h", "<cmd>Telescope oldfiles<CR>", opts)
-keymap("n", "<leader>e", "<cmd>Telescope symbols<cr>"
-  , opts)
+keymap("n", "<leader>e", "<cmd>Telescope symbols<cr>", opts)
 
 -- Para selecionar todo
 keymap("n", "<C-a>", "ggVG", opts)
 
--- COC
-keymap("n", "<leader>ca", "<Plug>(coc-codeaction)", opts)
-keymap("x", "<leader>ca", "<Plug>(coc-codeaction-selected)", opts)
-
-keymap("n", "gd", "<Plug>(coc-definition)", opts)
-keymap("n", "gr", "<Plug>(coc-references)", opts)
-keymap("n", "gi", "<Plug>(coc-implementation)", opts)
-keymap("n", "K", ":call CocActionAsync('doHover')<CR>", opts)
-keymap("n", "<leader>rn", "<Plug>(coc-rename)", {})
-keymap("i", "<C-Space>", "coc#refresh()", { silent = true, expr = true })
-keymap('n', '<F3>', ':call CocAction("format")<CR>', opts)
-keymap("n", "gc", "<Plug>(coc-git-commit)", opts)
--- navigate conflicts of current buffer
-keymap("n", "[c", "<Plug>(coc-git-prevconflict)", opts)
-keymap("n", "]c", "<Plug>(coc-git-nextconflict)", opts)
--- navigate chunks of current buffer
-keymap("n", "[g", "<Plug>(coc-git-prevchunk)", opts)
-keymap("n", "]g", "<Plug>(coc-git-nextchunk)", opts)
--- show chunk diff at current position
-keymap("n", "gs", "<Plug>(coc-git-chunkinfo)", opts)
-vim.cmd([[inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ CheckBackspace() ? "\<TAB>" :
-      \ coc#refresh()
-
-function! CheckBackspace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-let g:coc_snippet_next = '<tab>']])
+-- LSP using Lsp saga
+keymap("n", "<C-j>", "<Cmd>Lspsaga diagnostic_jump_next<CR>", opts)
+keymap("n", "K", "<Cmd>Lspsaga hover_doc<CR>", opts)
+keymap("n", "gd", "<Cmd>Lspsaga lsp_finder<CR>", opts)
+keymap("i", "<C-k>", "<Cmd>Lspsaga signature_help<CR>", opts)
+keymap("n", "gp", "<Cmd>Lspsaga preview_definition<CR>", opts)
+keymap("n", "gr", "<Cmd>Lspsaga rename<CR>", opts)
+keymap("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
+keymap("v", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
 
 -- NvimTree mapping
 keymap("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
