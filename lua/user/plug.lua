@@ -132,8 +132,24 @@ return packer.startup(function(use)
       -- Para syntax files HTTP files
       use("nicwest/vim-http")
 
-      -- COC
-      --[[ use { 'neoclide/coc.nvim', branch = 'release', tag = "*" } ]]
+      -- LSP
+      use 'onsails/lspkind-nvim' -- vscode-like pictograms
+      use 'neovim/nvim-lspconfig' -- LSP
+      use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
+      use 'williamboman/mason.nvim'
+      use 'williamboman/mason-lspconfig.nvim'
+      use 'glepnir/lspsaga.nvim' -- LSP UIs
+      use {
+          "ray-x/lsp_signature.nvim",
+      }
+
+      -- Completion
+      use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
+      use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
+      use 'hrsh7th/nvim-cmp' -- Completion
+      use 'hrsh7th/cmp-cmdline' -- Comando cmdline
+      use 'hrsh7th/cmp-path' -- Path
+
       -- GIT
       use 'lewis6991/gitsigns.nvim'
       use 'dinhhuy258/git.nvim' -- For git blame & browse

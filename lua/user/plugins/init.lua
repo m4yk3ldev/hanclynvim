@@ -15,3 +15,6 @@ require("user.plugins.gitsigns") -- Cargando gitsigns
 require("user.plugins.git") -- Cargando git
 require("user.plugins.neural") -- Cargando Neural
 require("user.plugins.image") -- Cargando Support to Image
+
+require("user.plugins.lsp") -- Cargando LSP
+require("user.plugins.cmp") -- Cargando Completion
