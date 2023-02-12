@@ -71,14 +71,14 @@ keymap("n", "<C-s>", "<cmd>w!<CR>", opts)
 -- ForceQuit
 keymap("n", "<C-q>", "<cmd>q!<CR>", opts)
 -- Turn off search highlighting
-keymap('n', '<Esc>', ':noh<CR>', opts)
+keymap("n", "<Esc>", ":noh<CR>", opts)
 -- Get out of the Terminal
-keymap('t', '<Esc>', '<C-\\><C-n>', opts)
+keymap("t", "<Esc>", "<C-\\><C-n>", opts)
 -- Duplicate Line
-keymap('n', 'tt', ':t.<CR>', opts)
+keymap("n", "tt", ":t.<CR>", opts)
 
 -- Recargar las configuraciones
-keymap('n', '<C-r>', '<cmd>lua reload_nvim_conf()<CR>', opts)
+keymap("n", "<C-r>", "<cmd>lua reload_nvim_conf()<CR>", opts)
 
 -- Telescope
 keymap("n", "<leader>ff", "<cmd>Telescope find_files hidden=true<cr>", opts)
@@ -87,19 +87,18 @@ keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<leader>gs", "<cmd>Telescope git_status<CR>", opts)
 keymap("n", "<leader>gc", "<cmd>Telescope git_commits<CR>", opts)
 keymap("n", "<leader>h", "<cmd>Telescope oldfiles<CR>", opts)
-keymap("n", "<leader>e", "<cmd>Telescope symbols<cr>"
-  , opts)
+keymap("n", "<leader>e", "<cmd>Telescope symbols<cr>", opts)
 
 -- Para selecionar todo
 keymap("n", "<C-a>", "ggVG", opts)
 
 -- LSP using Lsp saga
-keymap('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
-keymap('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
-keymap('n', 'gd', '<Cmd>Lspsaga lsp_finder<CR>', opts)
-keymap('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
-keymap('n', 'gp', '<Cmd>Lspsaga preview_definition<CR>', opts)
-keymap('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
+keymap("n", "<C-j>", "<Cmd>Lspsaga diagnostic_jump_next<CR>", opts)
+keymap("n", "K", "<Cmd>Lspsaga hover_doc<CR>", opts)
+keymap("n", "gd", "<Cmd>Lspsaga lsp_finder<CR>", opts)
+keymap("i", "<C-k>", "<Cmd>Lspsaga signature_help<CR>", opts)
+keymap("n", "gp", "<Cmd>Lspsaga preview_definition<CR>", opts)
+keymap("n", "gr", "<Cmd>Lspsaga rename<CR>", opts)
 keymap("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
 keymap("v", "<leader>ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
 

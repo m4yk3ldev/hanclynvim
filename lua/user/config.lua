@@ -1,6 +1,6 @@
 ---@diagnostic disable: duplicate-set-field
 -- :help options
-vim.cmd('autocmd!')
+vim.cmd("autocmd!")
 
 vim.opt.backup = false -- creates a backup file
 vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
@@ -9,7 +9,7 @@ vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
 vim.opt.conceallevel = 0 -- so that `` is visible in markdown files
 vim.opt.fileencoding = "utf-8" -- the encoding written to a file
 vim.opt.encoding = "utf-8" -- the encoding written to a file
-vim.scriptencoding = 'utf-8'
+vim.scriptencoding = "utf-8"
 vim.opt.hlsearch = true -- highlight all matches on previous search pattern
 vim.opt.ignorecase = true -- ignore case in search patterns
 vim.opt.mouse = "a" -- allow the mouse to be used in neovim
@@ -41,16 +41,16 @@ vim.opt.sidescrolloff = 8
 vim.opt.shortmess:append("c")
 vim.opt.emoji = true
 vim.opt.autoindent = true
-vim.opt.shell = 'zsh'
-vim.opt.inccommand = 'split'
+vim.opt.shell = "zsh"
+vim.opt.inccommand = "split"
 vim.opt.breakindent = true
 vim.opt.ai = true -- Auto indent
 vim.opt.si = true -- Smart Indent
-vim.opt.backspace = 'start,eol,indent'
-vim.opt.path:append { '**' } -- Finding files - Search down into subfolders
-vim.opt.wildignore:append { '*/node_modules/*' }
+vim.opt.backspace = "start,eol,indent"
+vim.opt.path:append({ "**" }) -- Finding files - Search down into subfolders
+vim.opt.wildignore:append({ "*/node_modules/*" })
 vim.opt.winblend = 0
-vim.opt.wildoptions = 'pum'
+vim.opt.wildoptions = "pum"
 vim.opt.pumblend = 5
 
 -- Undercurl
@@ -59,12 +59,12 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
 -- Turn off paste mode when leaving insert
 vim.api.nvim_create_autocmd("InsertLeave", {
-  pattern = '*',
-  command = "set nopaste"
+	pattern = "*",
+	command = "set nopaste",
 })
 
 -- Add asterisks in block comments
-vim.opt.formatoptions:append { 'r' }
+vim.opt.formatoptions:append({ "r" })
 vim.cmd("set whichwrap+=<,>,[,],h,l")
 vim.cmd([[set iskeyword+=-]])
 
@@ -76,12 +76,12 @@ vim.cmd("let python_highlight_all = 1")
 vim.cmd("let g:loaded_node_provider = 0")
 
 function _G.reload_nvim_conf()
-  for name, _ in pairs(package.loaded) do
-    if name:match('^lsp') then
-      package.loaded[name] = nil
-    end
-  end
+	for name, _ in pairs(package.loaded) do
+		if name:match("^lsp") then
+			package.loaded[name] = nil
+		end
+	end
 
-  dofile(vim.env.MYVIMRC)
-  vim.notify("Nvim configuration reloaded!", vim.log.levels.INFO)
+	dofile(vim.env.MYVIMRC)
+	vim.notify("Nvim configuration reloaded!", vim.log.levels.INFO)
 end
