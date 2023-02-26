@@ -109,7 +109,7 @@
     "winblend": 15,
     "borderhighlight": "FloatBorder"
   },
-  "Lua.telemetry.enable": true,
   "css.lint.unknownAtRules": "ignore",
-  "scss.lint.unknownAtRules": "ignore"
+  "scss.lint.unknownAtRules": "ignore",
+  "cSpell.userWords": ["Hancly", "Nvim"]
 }
