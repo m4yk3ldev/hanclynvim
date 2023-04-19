@@ -1,5 +1,10 @@
 {
   "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
   "Lua.diagnostics.globals": ["vim"],
-  "Lua.diagnostics.disable": ["missing-parameter"]
+  "Lua.diagnostics.disable": ["missing-parameter"],
+    "workspace.library": [
+        "/usr/share/nvim/runtime/lua",
+        "/home/maykel/.config/coc/extensions/coc-sumneko-lua-data/neodev/types/nightly",
+        "${3rd}/luv/library"
+    ]
 }

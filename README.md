@@ -8,7 +8,7 @@ Para usar el script se debe instalar el `install.sh`
 
 ```bash
 
-bash install.sh
+bash install_archlinux.sh
 
 ```
 
