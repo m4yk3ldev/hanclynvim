@@ -102,12 +102,6 @@ return packer.startup(function(use)
     'nvim-treesitter/nvim-treesitter-textobjects',
     after = 'nvim-treesitter',
   }
-  use {
-    "ThePrimeagen/refactoring.nvim",
-    requires = {
-      { "nvim-lua/plenary.nvim" },
-    }
-  }
   use("neoclide/vim-jsx-improve")
   use("pangloss/vim-javascript")
   use("yuezk/vim-js")
@@ -155,6 +149,9 @@ return packer.startup(function(use)
       'nvim-lua/plenary.nvim'
     },
   }
+
+  --- GithubCopilot
+  use {'github/copilot.vim'}
 
 
   -- Automatically set up your configuration after cloning packer.nvim
