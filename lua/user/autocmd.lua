@@ -12,7 +12,7 @@ end
 
 local autocmds = {
   lua_highlight = {
-    { "TextYankPost", "*", [[silent! lua vim.highlight.on_yank() {higroup="IncSearch", timeout=400}]] },
+    { "TextYankPost", "*",        [[silent! lua vim.highlight.on_yank() {higroup="IncSearch", timeout=400}]] },
     { "BufWritePost", "plug.lua", [[source <afile> | PackerSync ]] },
   },
 }

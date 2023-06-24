@@ -41,11 +41,11 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
   -- My plugins here
-  use("wbthomason/packer.nvim") -- Have packer manage itself
+  use("wbthomason/packer.nvim")          -- Have packer manage itself
   use("lewis6991/impatient.nvim")
-  use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
-  use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
-  use("numToStr/Comment.nvim") -- Easily comment stuff
+  use("nvim-lua/popup.nvim")             -- An implementation of the Popup API from vim in Neovim
+  use("nvim-lua/plenary.nvim")           -- Useful lua functions used ny lots of plugins
+  use("numToStr/Comment.nvim")           -- Easily comment stuff
   use("antoinemadec/FixCursorHold.nvim") -- Needed while issue https://github.com/neovim/neovim/issues/12587 is still open
   use "kyazdani42/nvim-web-devicons"
   use("rcarriga/nvim-notify")
@@ -71,10 +71,10 @@ return packer.startup(function(use)
   use { "folke/tokyonight.nvim" }
 
   -- snippets
-  use({ "L3MON4D3/LuaSnip" }) --snippet engine
+  use({ "L3MON4D3/LuaSnip" })             --snippet engine
   use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
   use({ "stevearc/vim-vscode-snippets" }) -- Usar los snippets del Vscode
-  use { "Djancyp/cheat-sheet" } -- Cargar documentacion de cada lenguaje
+  use { "Djancyp/cheat-sheet" }           -- Cargar documentacion de cada lenguaje
 
   -- Treesitter
   use({
@@ -82,22 +82,26 @@ return packer.startup(function(use)
     run = function()
       pcall(require('nvim-treesitter.install').update { with_sync = true })
     end,
-  }) -- Instalar optimizacion del parse files
+  })                                                 -- Instalar optimizacion del parse files
   use("JoosepAlviste/nvim-ts-context-commentstring") -- Para reconocer los commentarios
-  use("p00f/nvim-ts-rainbow") -- Adornar las chaves
+  use("p00f/nvim-ts-rainbow")                        -- Adornar las chaves
   use("nvim-treesitter/nvim-treesitter-refactor")
   use("theHamsta/nvim-treesitter-pairs")
   use({ "styled-components/vim-styled-components", branch = "main" }) -- Cargar los estilos del styled-components
-  use({ "windwp/nvim-autopairs", require = "nvim-treesitter/nvim-treesitter",
+  use({
+    "windwp/nvim-autopairs",
+    require = "nvim-treesitter/nvim-treesitter",
     config = function()
       require("nvim-autopairs").setup()
     end
   }) -- Autopairs, integrates with both cmp and treesitter
-  use({ "windwp/nvim-ts-autotag", require = "nvim-treesitter/nvim-treesitter",
+  use({
+    "windwp/nvim-ts-autotag",
+    require = "nvim-treesitter/nvim-treesitter",
     config = function()
       require("nvim-ts-autotag").setup()
     end
-  }) -- Para Autocerrar los tag
+  })    -- Para Autocerrar los tag
   use { -- Additional text objects via treesitter
     'nvim-treesitter/nvim-treesitter-textobjects',
     after = 'nvim-treesitter',
@@ -151,7 +155,7 @@ return packer.startup(function(use)
   }
 
   --- GithubCopilot
-  use {'github/copilot.vim'}
+  use { 'github/copilot.vim' }
 
 
   -- Automatically set up your configuration after cloning packer.nvim

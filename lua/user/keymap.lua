@@ -90,7 +90,7 @@ keymap("n", "<leader>gs", "<cmd>Telescope git_status<CR>", opts)
 keymap("n", "<leader>gc", "<cmd>Telescope git_commits<CR>", opts)
 keymap("n", "<leader>h", "<cmd>Telescope oldfiles<CR>", opts)
 keymap("n", "<leader>e", "<cmd>Telescope symbols<cr>"
-  , opts)
+, opts)
 
 -- Para selecionar todo
 keymap("n", "<C-a>", "ggVG", opts)
