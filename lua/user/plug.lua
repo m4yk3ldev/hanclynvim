@@ -49,7 +49,7 @@ return packer.startup(function(use)
   use("antoinemadec/FixCursorHold.nvim") -- Needed while issue https://github.com/neovim/neovim/issues/12587 is still open
   use "kyazdani42/nvim-web-devicons"
   use("rcarriga/nvim-notify")
-  use { "j-hui/fidget.nvim", config = function()
+  use { "j-hui/fidget.nvim", tag = 'legacy', config = function()
     require "fidget".setup {}
   end }
   use("ahmedkhalf/project.nvim")
