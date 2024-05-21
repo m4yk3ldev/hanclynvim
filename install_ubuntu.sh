@@ -4,4 +4,4 @@ set -ex
 
 echo "Instalando NVIM"
 sudo add-apt-repository ppa:neovim-ppa/unstable
-sudo apt install neovim  fzf xclip ripgrep  luarocks
+sudo apt install neovim  fzf xclip ripgrep luarocks
