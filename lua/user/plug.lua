@@ -67,8 +67,6 @@ return packer.startup(function(use)
   -- Theme
   use { "ellisonleao/gruvbox.nvim" }
   use { "folke/which-key.nvim" }
-  use { "luisiacc/gruvbox-baby" }
-  use { "folke/tokyonight.nvim" }
 
   -- snippets
   use({ "L3MON4D3/LuaSnip" })             --snippet engine
