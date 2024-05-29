@@ -118,9 +118,6 @@ return packer.startup(function(use)
   use("maxmellon/vim-jsx-pretty")
   use("nvim-telescope/telescope-symbols.nvim")
 
-  -- Rest API
-  use("NTBBloodbath/rest.nvim")
-
   -- Para syntax files HTTP files
   use("nicwest/vim-http")
 
