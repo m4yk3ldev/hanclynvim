@@ -3,5 +3,5 @@
 set -ex
 
 echo "Instalando NVIM"
-sudo add-apt-repository ppa:neovim-ppa/stable
+sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt install neovim  fzf xclip ripgrep luarocks
