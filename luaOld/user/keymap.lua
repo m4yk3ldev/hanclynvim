@@ -68,21 +68,20 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 -- Para dividar pantalla
 keymap("n", "<leader>v", ":vsplit<CR>", opts)
 
-
 -- ForceWrite
 keymap("n", "<C-s>", "<cmd>w!<CR>", opts)
 
 -- ForceQuit
 keymap("n", "<C-q>", "<cmd>q!<CR>", opts)
 -- Turn off search highlighting
-keymap('n', '<Esc>', ':noh<CR>', opts)
+keymap("n", "<Esc>", ":noh<CR>", opts)
 -- Get out of the Terminal
-keymap('t', '<Esc>', '<C-\\><C-n>', opts)
+keymap("t", "<Esc>", "<C-\\><C-n>", opts)
 -- Duplicate Line
-keymap('n', 'tt', ':t.<CR>', opts)
+keymap("n", "tt", ":t.<CR>", opts)
 
 -- Recargar las configuraciones
-keymap('n', '<C-r>', '<cmd>lua reload_nvim_conf()<CR>', opts)
+keymap("n", "<C-r>", "<cmd>lua reload_nvim_conf()<CR>", opts)
 
 -- Telescope
 keymap("n", "<leader>ff", "<cmd>Telescope find_files hidden=true<cr>", opts)
@@ -91,8 +90,7 @@ keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<leader>gs", "<cmd>Telescope git_status<CR>", opts)
 keymap("n", "<leader>gc", "<cmd>Telescope git_commits<CR>", opts)
 keymap("n", "<leader>h", "<cmd>Telescope oldfiles<CR>", opts)
-keymap("n", "<leader>e", "<cmd>Telescope symbols<cr>"
-, opts)
+keymap("n", "<leader>e", "<cmd>Telescope symbols<cr>", opts)
 
 -- Para selecionar todo
 keymap("n", "<C-a>", "ggVG", opts)
@@ -107,7 +105,7 @@ keymap("n", "gi", "<Plug>(coc-implementation)", opts)
 keymap("n", "K", ":call CocActionAsync('doHover')<CR>", opts)
 keymap("n", "<leader>rn", "<Plug>(coc-rename)", {})
 keymap("i", "<C-Space>", "coc#refresh()", { silent = true, expr = true })
-keymap('n', '<F3>', ':call CocAction("format")<CR>', opts)
+keymap("n", "<F3>", ':call CocAction("format")<CR>', opts)
 keymap("n", "gc", "<Plug>(coc-git-commit)", opts)
 -- navigate conflicts of current buffer
 keymap("n", "[c", "<Plug>(coc-git-prevconflict)", opts)

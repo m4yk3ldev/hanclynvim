@@ -30,9 +30,6 @@ keymap.set("n", "<C-q>", "<cmd>q!<CR>", opts)
 -- Duplicate Line
 keymap.set("n", "tt", ":t.<CR>", opts)
 
--- Recargar las configuraciones
-keymap.set("n", "<C-r>", "<cmd>lua reload_nvim_conf()<CR>", opts)
-
 -- Para selecionar todo
 keymap.set("n", "<C-a>", "ggVG", opts)
 

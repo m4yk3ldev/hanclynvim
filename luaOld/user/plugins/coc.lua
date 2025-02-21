@@ -1,27 +1,27 @@
 vim.g.coc_global_extensions = {
-  'coc-html',
-  'coc-json',
-  'coc-css',
-  'coc-tsserver',
-  'coc-tabnine',
-  'coc-prettier',
-  'coc-eslint',
+  "coc-html",
+  "coc-json",
+  "coc-css",
+  "coc-tsserver",
+  "coc-tabnine",
+  "coc-prettier",
+  "coc-eslint",
   "coc-jedi",
   "coc-pyright",
-  'coc-pairs',
-  'coc-marketplace',
-  'coc-git',
-  'coc-htmldjango',
-  'coc-snippets',
-  'coc-scssmodules',
-  'coc-xml',
-  'coc-styled-components',
-  'coc-html-css-support',
-  'coc-vimlsp',
-  'coc-sumneko-lua',
-  'coc-yank',
-  'coc-spell-checker',
-  'coc-cspell-dicts',
+  "coc-pairs",
+  "coc-marketplace",
+  "coc-git",
+  "coc-htmldjango",
+  "coc-snippets",
+  "coc-scssmodules",
+  "coc-xml",
+  "coc-styled-components",
+  "coc-html-css-support",
+  "coc-vimlsp",
+  "coc-sumneko-lua",
+  "coc-yank",
+  "coc-spell-checker",
+  "coc-cspell-dicts",
   "coc-docker",
   "coc-react-refactor",
   "coc-rls",
@@ -32,10 +32,10 @@ vim.g.coc_global_extensions = {
   "coc-tailwindcss",
   "@yaegassy/coc-tailwindcss3",
   "coc-emmet",
-  "coc-vue"
+  "coc-vue",
 }
-vim.cmd('autocmd FileType scss setl iskeyword+=@-@')
-vim.cmd('let g:javascript_plugin_flow = 1')
+vim.cmd("autocmd FileType scss setl iskeyword+=@-@")
+vim.cmd("let g:javascript_plugin_flow = 1")
 vim.cmd("autocmd CursorHold * silent call CocActionAsync('highlight')")
 vim.cmd("autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')")
 vim.cmd([[

@@ -17,9 +17,22 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
-    { "LazyVim/LazyVim", import = "lazyvim.plugins", opts = {
-      colorscheme = "gruvbox",
-    } },
+    {
+      "LazyVim/LazyVim",
+      import = "lazyvim.plugins",
+      opts = {
+        colorscheme = "gruvbox",
+        news = {
+          lazyvim = true,
+          neovim = true,
+        },
+      },
+    },
+    { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
+    { import = "lazyvim.plugins.extras.ai.copilot" },
+    { import = "lazyvim.plugins.extras.lang.typescript" },
+    { import = "lazyvim.plugins.extras.linting.eslint" },
+    { import = "lazyvim.plugins.extras.formatting.biome" },
     -- import/override with your plugins
     { import = "plugins" },
   },
@@ -32,7 +45,7 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "tokyonight" } },
+  install = { colorscheme = { "gruvbox" } },
   checker = {
     enabled = true, -- check for plugin updates periodically
     notify = true, -- notify on update
