@@ -67,6 +67,8 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Para dividar pantalla
 keymap("n", "<leader>v", ":vsplit<CR>", opts)
+
+
 -- ForceWrite
 keymap("n", "<C-s>", "<cmd>w!<CR>", opts)
 
