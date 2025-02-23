@@ -1,7 +1,7 @@
 return {
   "ellisonleao/gruvbox.nvim",
   lazy = true,
-  opts = function()
+  init = function()
     return {
       undercurl = true,
       underline = true,
