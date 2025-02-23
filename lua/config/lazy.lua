@@ -32,9 +32,10 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.ai.copilot" },
     { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.python" },
+    { import = "lazyvim.plugins.extras.lang.json" },
+    { import = "lazyvim.plugins.extras.lang.tailwind" },
     { import = "lazyvim.plugins.extras.linting.eslint" },
     { import = "lazyvim.plugins.extras.formatting.biome" },
-    { import = "lazyvim.plugins.extras.coding.yanky" },
     -- import/override with your plugins
     { import = "plugins" },
   },
@@ -50,9 +51,11 @@ require("lazy").setup({
   install = { colorscheme = { "gruvbox" } },
   checker = {
     enabled = true, -- check for plugin updates periodically
-    notify = true, -- notify on update
   }, -- automatically check for plugin updates
   performance = {
+    cache = {
+      enabled = true, -- cache loaded plugins
+    },
     rtp = {
       -- disable some rtp plugins
       disabled_plugins = {
