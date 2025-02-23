@@ -1,20 +1,16 @@
+
 # Configuración de Neovim
 
-Este documento describe la configuración de Neovim utilizada, incluyendo los mapeos de teclas y ajustes personalizados.
+Este archivo contiene la configuración de Neovim utilizada con LazyVim.
 
-## Configuración de LazyVim
+## Notas importantes
 
-Este archivo es cargado automáticamente por `lazyvim.config.init`.
+- No usar `LazyVim.safe_keymap_set` en tu propia configuración. En su lugar, usa `vim.keymap.set`.
+- Para mejorar la organización, asegúrate de agrupar las configuraciones en secciones bien definidas.
 
-```lua
--- This file is automatically loaded by lazyvim.config.init
+## Mapeo de teclas
 
--- DO NOT USE `LazyVim.safe_keymap_set` IN YOUR OWN CONFIG!!
--- use `vim.keymap.set` instead
-local map = LazyVim.safe_keymap_set
-```
-
-### Mejor navegación vertical
+### Mejor desplazamiento vertical
 ```lua
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
 map({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
@@ -22,50 +18,84 @@ map({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, 
 map({ "n", "x" }, "<Up>", "v:count == 0 ? 'gk' : 'k'", { desc = "Up", expr = true, silent = true })
 ```
 
-### Movimiento entre ventanas con `<Ctrl> + hjkl`
+### Navegación entre ventanas con `<Ctrl> + hjkl`
 ```lua
-map("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
-map("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
-map("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
-map("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
+map("n", "<C-h>", "<C-w>h", { desc = "Ir a la ventana izquierda", remap = true })
+map("n", "<C-j>", "<C-w>j", { desc = "Ir a la ventana inferior", remap = true })
+map("n", "<C-k>", "<C-w>k", { desc = "Ir a la ventana superior", remap = true })
+map("n", "<C-l>", "<C-w>l", { desc = "Ir a la ventana derecha", remap = true })
 ```
 
-### Atajos adicionales
+### Ajuste del tamaño de la ventana
 ```lua
-local opts = { noremap = true, silent = true }
-local keymap = vim.keymap
-
--- Remap space as leader key
-keymap.set("", "<Space>", "<Nop>", opts)
-
--- Divider screen
-keymap.set("n", "<leader>v", ":vsplit<CR>", opts)
-
--- ForceWrite
-keymap.set("n", "<C-s>", "<cmd>w!<CR>", opts)
-
--- ForceQuit
-keymap.set("n", "<C-q>", "<cmd>q!<CR>", opts)
-
--- Duplicate Line
-keymap.set("n", "tt", ":t.<CR>", opts)
-
--- Seleccionar todo
-keymap.set("n", "<C-a>", "ggVG", opts)
-
--- ToggleTerm
-keymap.set("n", "<F2>", "<cmd>ToggleTerm<cr>", opts)
-
--- Recargar las configuraciones
-keymap.set("n", "<C-R>", "<cmd>lua reload_nvim_conf()<CR>", opts)
-
--- Trouble
-keymap.set("n", "<leader>xx", "<cmd>Trouble<cr>", { silent = true, noremap = true })
-keymap.set("n", "<leader>xw", "<cmd>Trouble workspace_diagnostics<cr>", { silent = true, noremap = true })
-keymap.set("n", "<leader>xd", "<cmd>Trouble document_diagnostics<cr>", { silent = true, noremap = true })
-keymap.set("n", "<leader>xl", "<cmd>Trouble loclist<cr>", { silent = true, noremap = true })
-keymap.set("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", { silent = true, noremap = true })
-
--- CheatSH Documentation
-keymap.set("n", "<leader>c", "<cmd>CheatSH<cr>", opts)
+map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Aumentar altura de la ventana" })
+map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Reducir altura de la ventana" })
+map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Reducir ancho de la ventana" })
+map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Aumentar ancho de la ventana" })
 ```
+
+### Mover líneas de código
+```lua
+map("n", "<A-j>", "<cmd>execute 'move .+' . v:count1<cr>==", { desc = "Mover hacia abajo" })
+map("n", "<A-k>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==", { desc = "Mover hacia arriba" })
+map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Mover hacia abajo" })
+map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Mover hacia arriba" })
+```
+
+### Buffers
+```lua
+map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Buffer anterior" })
+map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Siguiente buffer" })
+map("n", "<leader>bd", function()
+  Snacks.bufdelete()
+end, { desc = "Eliminar buffer" })
+map("n", "<leader>bD", "<cmd>:bd<cr>", { desc = "Eliminar buffer y ventana" })
+```
+
+### Búsqueda y navegación
+```lua
+map("n", "n", "'Nn'[v:searchforward].'zv'", { expr = true, desc = "Siguiente resultado" })
+map("n", "N", "'nN'[v:searchforward].'zv'", { expr = true, desc = "Resultado anterior" })
+```
+
+### Guardar archivo
+```lua
+map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Guardar archivo" })
+```
+
+### Dividir ventana
+```lua
+map("n", "<leader>v", ":vsplit<CR>", { desc = "Dividir ventana verticalmente" })
+```
+
+### Cerrar Neovim
+```lua
+map("n", "<C-q>", "<cmd>q!<CR>", { desc = "Cerrar Neovim sin guardar" })
+```
+
+### Terminal flotante
+```lua
+map("n", "<leader>fT", function() Snacks.terminal() end, { desc = "Abrir terminal flotante" })
+```
+
+### Manejo de pestañas
+```lua
+map("n", "<leader><tab>l", "<cmd>tablast<cr>", { desc = "Última pestaña" })
+map("n", "<leader><tab>o", "<cmd>tabonly<cr>", { desc = "Cerrar otras pestañas" })
+map("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "Nueva pestaña" })
+```
+
+### Atajos para Trouble
+```lua
+map("n", "<leader>xx", "<cmd>Trouble<cr>", { silent = true, noremap = true, desc = "Abrir Trouble" })
+map("n", "<leader>xw", "<cmd>Trouble workspace_diagnostics<cr>", { silent = true, noremap = true, desc = "Ver diagnóstico del espacio de trabajo" })
+map("n", "<leader>xd", "<cmd>Trouble document_diagnostics<cr>", { silent = true, noremap = true, desc = "Ver diagnóstico del documento" })
+```
+
+### CheatSH (Documentación rápida)
+```lua
+map("n", "<leader>c", "<cmd>CheatSH<cr>", { desc = "Abrir CheatSH" })
+```
+
+Esta configuración mejora la navegación y personalización dentro de Neovim con LazyVim.
+
