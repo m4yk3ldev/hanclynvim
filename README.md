@@ -12,4 +12,4 @@ bash install_archlinux.sh
 
 ```
 
-!INCLUDE "KEYMAP.md"
+[Ver keymap](KEYMAP.md)
