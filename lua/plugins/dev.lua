@@ -1,5 +1,5 @@
 return {
-  { "Djancyp/cheat-sheet" },
+  { "Djancyp/cheat-sheet", lazy = true },
   { "L3MON4D3/LuaSnip" },
   { "rafamadriz/friendly-snippets" },
   { "stevearc/vim-vscode-snippets" },
