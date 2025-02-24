@@ -8,4 +8,7 @@
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 --
 
-vim.cmd("au BufRead,BufNewFile *.html.j2		set filetype=jinja.html")
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.html.j2",
+  command = "set filetype=jinja.html",
+})

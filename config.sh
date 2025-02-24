@@ -1,3 +1,3 @@
 #!/bin/bash
-set -ex
-ln -sfv "$PWD" "$HOME"/.config/nvim
+set -e
+ln -sf "$PWD" "$HOME/.config/nvim"
