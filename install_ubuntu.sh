@@ -3,5 +3,7 @@
 set -ex
 
 echo "Instalando NVIM"
-sudo add-apt-repository ppa:neovim-ppa/stable
-sudo apt install neovim fzf xclip ripgrep luarocks
+sudo snap install nvim --classic
+echo "Instalando dependencias"
+sudo apt update
+sudo apt install -y build-essential curl git wget unzip python3-pip fzf xclip ripgrep luarocks
