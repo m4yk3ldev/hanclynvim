@@ -9,10 +9,10 @@ return {
         vim.notify("Error loading precognition.nvim", vim.log.levels.ERROR)
         return
       end
-      
+
       -- Setup básico
       precognition.setup({})
-      
+
       -- Toggle precognition on/off with <leader>tp
       vim.keymap.set("n", "<leader>tp", function()
         precognition.toggle()

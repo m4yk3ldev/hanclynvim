@@ -45,6 +45,3 @@ keymap.set("n", "<leader>xw", "<cmd>Trouble workspace_diagnostics<cr>", { silent
 keymap.set("n", "<leader>xd", "<cmd>Trouble document_diagnostics<cr>", { silent = true, noremap = true })
 keymap.set("n", "<leader>xl", "<cmd>Trouble loclist<cr>", { silent = true, noremap = true })
 keymap.set("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", { silent = true, noremap = true })
-
--- CheatSH Documentation
-keymap.set("n", "<leader>c", "<cmd>CheatSH<cr>", opts)
