@@ -1,0 +1,1 @@
+A modern Neovim configuration built on LazyVim with GitHub Copilot, TypeScript, Python, and more.
