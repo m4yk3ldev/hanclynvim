@@ -2,13 +2,8 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
-local opts = { noremap = true, silent = true }
-
--- Shorten function name
 local keymap = vim.keymap
-
---Remap space as leader key
-keymap.set("", "<Space>", "<Nop>", opts)
+local opts = { noremap = true, silent = true }
 
 -- Modes
 --   normal_mode = "n",
@@ -18,30 +13,38 @@ keymap.set("", "<Space>", "<Nop>", opts)
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Divider screen
-keymap.set("n", "<leader>v", ":vsplit<CR>", opts)
+-- Dividir pantalla verticalmente (complementa los splits por defecto de LazyVim)
+keymap.set("n", "<leader>v", "<cmd>vsplit<CR>", { desc = "Split window vertically" })
 
--- ForceWrite
-keymap.set("n", "<C-s>", "<cmd>w!<CR>", opts)
+-- Guardar archivo con fuerza (sobreescribe el default de LazyVim para añadir !)
+keymap.set("n", "<C-s>", "<cmd>w!<CR>", { desc = "Force save file" })
+keymap.set("i", "<C-s>", "<cmd>w!<CR><esc>", { desc = "Force save file" })
 
--- ForceQuit
-keymap.set("n", "<C-q>", "<cmd>q!<CR>", opts)
+-- Salir de Neovim sin guardar
+keymap.set("n", "<C-q>", "<cmd>q!<CR>", { desc = "Force quit" })
 
--- Duplicate Line
-keymap.set("n", "tt", ":t.<CR>", opts)
+-- Duplicar línea actual
+keymap.set("n", "tt", "<cmd>t.<CR>", { desc = "Duplicate line" })
 
--- Para selecionar todo
-keymap.set("n", "<C-a>", "ggVG", opts)
+-- Seleccionar todo el buffer
+keymap.set("n", "<leader>sa", "ggVG", { desc = "Select all" })
 
--- ToggleTerm
-keymap.set("n", "<F2>", "<cmd>ToggleTerm<cr>", opts)
+-- ToggleTerm (requiere el plugin akinsho/toggleterm.nvim)
+keymap.set("n", "<F2>", "<cmd>ToggleTerm<cr>", { desc = "Toggle terminal" })
 
--- Recargar las configuraciones
-keymap.set("n", "<C-R>", "<cmd>lua reload_nvim_conf()<CR>", opts)
+-- Recargar configuración de Neovim
+keymap.set("n", "<leader>ur", function()
+  if pcall(reload_nvim_conf) then
+    vim.notify("Config reloaded", vim.log.levels.INFO)
+  else
+    vim.cmd("source $MYVIMRC")
+    vim.notify("Config sourced", vim.log.levels.INFO)
+  end
+end, { desc = "Reload Neovim config" })
 
--- Trouble
-keymap.set("n", "<leader>xx", "<cmd>Trouble<cr>", { silent = true, noremap = true })
-keymap.set("n", "<leader>xw", "<cmd>Trouble workspace_diagnostics<cr>", { silent = true, noremap = true })
-keymap.set("n", "<leader>xd", "<cmd>Trouble document_diagnostics<cr>", { silent = true, noremap = true })
-keymap.set("n", "<leader>xl", "<cmd>Trouble loclist<cr>", { silent = true, noremap = true })
-keymap.set("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", { silent = true, noremap = true })
+-- Trouble (estos keymaps son redundantes con los defaults de LazyVim)
+-- Los mantenemos para compatibilidad, pero considera usar los defaults:
+-- <leader>xx ya está definido por defecto en LazyVim
+-- <leader>xl y <leader>xq también están en los defaults
+keymap.set("n", "<leader>xw", "<cmd>Trouble diagnostics<cr>", { desc = "Workspace Diagnostics (Trouble)" })
+keymap.set("n", "<leader>xd", "<cmd>Trouble diagnostics filter.buf=0<cr>", { desc = "Document Diagnostics (Trouble)" })
