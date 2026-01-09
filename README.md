@@ -42,13 +42,13 @@ mv ~/.config/nvim ~/.config/nvim.backup
 mv ~/.local/share/nvim ~/.local/share/nvim.backup
 ```
 
-2. Clone this repository:
+1. Clone this repository:
 
 ```bash
 git clone https://github.com/m4yk3ldev/hanclynvim.git ~/.config/nvim
 ```
 
-3. Start Neovim:
+1. Start Neovim:
 
 ```bash
 nvim
