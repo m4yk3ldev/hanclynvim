@@ -42,8 +42,6 @@ sudo apt install -y \
   unzip \
   python3-pip \
   python3-venv \
-  nodejs \
-  npm \
   fzf \
   xclip \
   ripgrep \
@@ -66,4 +64,3 @@ echo ""
 echo "Run 'nvim' to start Neovim and let Lazy.nvim install plugins."
 echo "On first launch, plugins will be automatically installed."
 echo ""
-
