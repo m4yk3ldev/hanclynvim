@@ -1,3 +1,30 @@
 
 lazy-lock.json
 lazyvim.json
+
+# AI agent directories (except .claude)
+.adal/
+.agents/
+.augment/
+.codebuddy/
+.commandcode/
+.continue/
+.factory/
+.iflow/
+.junie/
+.kilocode/
+.kiro/
+.kode/
+.mcpjam/
+.mux/
+.neovate/
+.openhands/
+.pochi/
+.qoder/
+.qwen/
+.roo/
+.trae/
+.vibe/
+.windsurf/
+.zencoder/
+skills-lock.json
