@@ -4,7 +4,6 @@ lazyvim.json
 
 # AI agent directories (except .claude)
 .adal/
-.agents/
 .augment/
 .codebuddy/
 .commandcode/
