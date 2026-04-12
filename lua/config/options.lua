@@ -51,7 +51,6 @@ vim.opt.wildignore:append({ "*/node_modules/*" })
 vim.opt.winblend = 0
 vim.opt.wildoptions = "pum"
 vim.opt.pumblend = 5
-vim.opt.emoji = true
 
 -- Undercurl
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
@@ -68,14 +67,3 @@ vim.opt.title = true -- Mostrar el nombre del fichero en el titulo
 
 vim.cmd("let python_highlight_all = 1")
 vim.cmd("let g:loaded_node_provider = 0")
-
-function _G.reload_nvim_conf()
-  for name, _ in pairs(package.loaded) do
-    if name:match("^lsp") then
-      package.loaded[name] = nil
-    end
-  end
-
-  dofile(vim.env.MYVIMRC)
-  vim.notify("Nvim configuration reloaded!", vim.log.levels.INFO)
-end

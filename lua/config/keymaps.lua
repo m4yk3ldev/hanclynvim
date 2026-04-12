@@ -34,12 +34,13 @@ keymap.set("n", "<F2>", "<cmd>ToggleTerm<cr>", { desc = "Toggle terminal" })
 
 -- Recargar configuración de Neovim
 keymap.set("n", "<leader>ur", function()
-  if pcall(reload_nvim_conf) then
-    vim.notify("Config reloaded", vim.log.levels.INFO)
-  else
-    vim.cmd("source $MYVIMRC")
-    vim.notify("Config sourced", vim.log.levels.INFO)
+  for name, _ in pairs(package.loaded) do
+    if name:match("^lsp") then
+      package.loaded[name] = nil
+    end
   end
+  dofile(vim.env.MYVIMRC)
+  vim.notify("Nvim configuration reloaded!", vim.log.levels.INFO)
 end, { desc = "Reload Neovim config" })
 
 -- Trouble (estos keymaps son redundantes con los defaults de LazyVim)
