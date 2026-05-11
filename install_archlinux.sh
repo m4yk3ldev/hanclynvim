@@ -27,7 +27,7 @@ sudo pacman -S --needed --noconfirm \
   neovim \
   python-neovim \
   python-pip \
-  nodejs \
+  nodejs-lts-krypton \
   npm \
   git \
   curl \
