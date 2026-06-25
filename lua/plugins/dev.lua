@@ -4,5 +4,9 @@ return {
   { "rafamadriz/friendly-snippets", lazy = true },
   { "stevearc/vim-vscode-snippets", lazy = true },
   { "evanleck/vim-svelte", branch = "main", ft = { "svelte" } },
-  { "dsznajder/vscode-es7-javascript-react-snippets", lazy = true, build = "yarn install --frozen-lockfile && yarn compile" },
+  {
+    "dsznajder/vscode-es7-javascript-react-snippets",
+    lazy = true,
+    build = "yarn install --frozen-lockfile && yarn compile",
+  },
 }

@@ -13,6 +13,7 @@
 ### Task 1: Habilitar lazy-loading por defecto
 
 **Files:**
+
 - Modify: `lua/config/lazy.lua:55`
 
 **Step 1: Cambiar defaults.lazy a true**
@@ -49,6 +50,7 @@ git commit -m "perf: enable lazy-loading by default (defaults.lazy = true)"
 ### Task 2: Eliminar duplicado de tailwind en lazy.lua
 
 **Files:**
+
 - Modify: `lua/config/lazy.lua:41`
 
 **Step 1: Eliminar la linea duplicada**
@@ -72,6 +74,7 @@ git commit -m "fix: remove duplicate tailwind extra import"
 ### Task 3: Limpiar dev.lua — eliminar plugins de sintaxis redundantes con Treesitter
 
 **Files:**
+
 - Modify: `lua/plugins/dev.lua`
 
 **Step 1: Eliminar plugins de sintaxis legacy**
@@ -122,6 +125,7 @@ git commit -m "perf: remove legacy syntax plugins redundant with treesitter, add
 ### Task 4: Arreglar colorscheme — init muerto a opts + priority
 
 **Files:**
+
 - Modify: `lua/plugins/colorscheme.lua`
 
 **Step 1: Reescribir el spec del colorscheme**
@@ -171,6 +175,7 @@ git commit -m "fix: colorscheme config was dead code (init returned unused table
 ### Task 5: Mover autocmd de options.lua a autocmds.lua
 
 **Files:**
+
 - Modify: `lua/config/options.lua:60-64` (eliminar)
 - Modify: `lua/config/autocmds.lua` (agregar)
 
@@ -209,6 +214,7 @@ git commit -m "refactor: move InsertLeave autocmd from options.lua to autocmds.l
 ### Task 6: Eliminar duplicado de emoji y limpiar options.lua
 
 **Files:**
+
 - Modify: `lua/config/options.lua:54`
 
 **Step 1: Eliminar el vim.opt.emoji duplicado en linea 54**
